@@ -20,7 +20,7 @@ def render_header() -> str:
 
     selected_view = st.radio(
         "Selecciona una vista",
-        ["Base de datos", "Promedio movil"],
+        ["Base de datos", "Promedio movil", "Suavizamiento exponencial"],
         horizontal=True,
         key="main_view_selector",
         label_visibility="collapsed",
