@@ -4,6 +4,7 @@ from webapp.components.header import render_header
 from webapp.components.table import render_date_filter, render_table
 from webapp.config import APP_TITLE, PALETA
 from webapp.data import load_data_from_excel, load_default_data
+from webapp.views.promedio_movil import render_promedio_movil_view
 
 
 st.set_page_config(
@@ -81,7 +82,7 @@ def inject_css() -> None:
 
 def main() -> None:
     inject_css()
-    render_header()
+    selected_view = render_header()
 
     default_data = load_default_data()
 
@@ -108,8 +109,11 @@ def main() -> None:
         st.warning("El archivo se cargó, pero no contiene filas válidas después del procesamiento.")
         st.stop()
 
-    filtered_data = render_date_filter(data)
-    render_table(filtered_data)
+    if selected_view == "Base de datos":
+        filtered_data = render_date_filter(data)
+        render_table(filtered_data)
+    else:
+        render_promedio_movil_view(data)
 
 
 if __name__ == "__main__":
