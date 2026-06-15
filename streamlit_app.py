@@ -4,6 +4,7 @@ from webapp.components.header import render_header
 from webapp.components.table import render_date_filter, render_table
 from webapp.config import APP_TITLE, PALETA
 from webapp.data import load_data_from_excel, load_default_data
+from webapp.views.regresion_lineal import render_regresion_lineal_view
 from webapp.views.promedio_movil import render_promedio_movil_view
 from webapp.views.suavizamiento_exponencial import render_suavizamiento_exponencial_view
 
@@ -115,8 +116,10 @@ def main() -> None:
         render_table(filtered_data)
     elif selected_view == "Promedio movil":
         render_promedio_movil_view(data)
-    else:
+    elif selected_view == "Suavizamiento exponencial":
         render_suavizamiento_exponencial_view(data)
+    else:
+        render_regresion_lineal_view(data)
 
 
 if __name__ == "__main__":

@@ -16,7 +16,7 @@ def render_date_filter(data: pd.DataFrame) -> pd.DataFrame:
 
     years = sorted(data["Fecha"].dt.year.dropna().unique().tolist())
     if "year_filter_mode" not in st.session_state:
-        st.session_state.year_filter_mode = "all"
+        st.session_state.year_filter_mode = "year"
     if "selected_year" not in st.session_state:
         st.session_state.selected_year = years[-1]
     if "last_selected_year" not in st.session_state:
