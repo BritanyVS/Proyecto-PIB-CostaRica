@@ -7,6 +7,8 @@ from webapp.data import load_data_from_excel, load_default_data
 from webapp.views.regresion_lineal import render_regresion_lineal_view
 from webapp.views.promedio_movil import render_promedio_movil_view
 from webapp.views.suavizamiento_exponencial import render_suavizamiento_exponencial_view
+from webapp.views.control_estadistico import render_control_estadistico_view
+from webapp.views.cadena_markov import render_markov_view
 
 
 st.set_page_config(
@@ -118,6 +120,12 @@ def main() -> None:
         render_promedio_movil_view(data)
     elif selected_view == "Suavizamiento exponencial":
         render_suavizamiento_exponencial_view(data)
+
+    elif selected_view == "Control estadistico":
+        render_control_estadistico_view(data)
+
+    elif selected_view == "Cadena de Markov":
+        render_markov_view(data)
     else:
         render_regresion_lineal_view(data)
 
