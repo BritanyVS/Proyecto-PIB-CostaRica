@@ -9,7 +9,7 @@ from webapp.views.promedio_movil import render_promedio_movil_view
 from webapp.views.suavizamiento_exponencial import render_suavizamiento_exponencial_view
 from webapp.views.control_estadistico import render_control_estadistico_view
 from webapp.views.cadena_markov import render_markov_view
-
+from webapp.views.programacion_lineal import render_programacion_lineal_view
 
 st.set_page_config(
     page_title=APP_TITLE,
@@ -126,6 +126,9 @@ def main() -> None:
 
     elif selected_view == "Cadena de Markov":
         render_markov_view(data)
+
+    elif selected_view == "Programacion lineal":
+        render_programacion_lineal_view(data)    
     else:
         render_regresion_lineal_view(data)
 
