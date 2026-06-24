@@ -20,7 +20,13 @@ def render_header() -> str:
 
     selected_view = st.radio(
         "Selecciona una vista",
-        ["Base de datos", "Promedio movil", "Suavizamiento exponencial", "Regresion lineal", "Control estadistico", "Cadena de Markov", "Programacion lineal"],
+        [
+            "Base de datos",
+            "Pronosticos",
+            "Control estadistico",
+            "Cadena de Markov",
+            "Programacion lineal",
+        ],
         horizontal=True,
         key="main_view_selector",
         label_visibility="collapsed",

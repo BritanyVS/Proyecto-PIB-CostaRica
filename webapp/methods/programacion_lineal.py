@@ -69,5 +69,8 @@ class ProgramacionLineal:
         asignacion.attrs["valor_optimo"] = (
             -resultado.fun
         )
+        asignacion.attrs["coeficientes"] = dict(
+            zip(self.sectores, coeficientes)
+        )
 
         return asignacion
